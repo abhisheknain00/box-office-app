@@ -1,8 +1,9 @@
-import ActorsCard from './ActorsCard';
+import ActorsCard from "./ActorsCard";
+import { FlexGrid } from "../common/FlexGrid";
 
 const ActorsGrid = ({ actors }) => {
   return (
-    <div>
+    <FlexGrid>
       {actors.map(data => (
         <ActorsCard
           key={data.person.id}
@@ -12,11 +13,11 @@ const ActorsGrid = ({ actors }) => {
           deathday={data.person.deathday}
           gender={data.person.gender}
           image={
-            data.person.image ? data.person.image.medium : '/not-found-img.png'
+            data.person.image ? data.person.image.medium : "/not-found-img.png"
           }
         />
       ))}
-    </div>
+    </FlexGrid>
   );
 };
 
